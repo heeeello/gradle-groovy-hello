@@ -1,0 +1,37 @@
+apply plugin: 'java'
+apply plugin: 'groovy'
+apply plugin: 'application'
+
+repositories {
+   // mavenCentral()
+    mavenLocal()
+    maven { url "http://192.168.206.92/content/groups/public" }
+
+}
+
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+dependencies {
+    compile "joda-time:joda-time:2.2"
+    compile 'org.codehaus.groovy:groovy-all:2.4.7'
+
+    testCompile "junit:junit:4.12"
+}
+
+
+//String main_name = 'hello.HelloWorld'
+String main_name = 'hello.Week1'
+jar {
+    baseName = 'gs-gradle'
+    version =  '0.1.0'
+
+    from configurations.runtime.asFileTree.files.collect { zipTree(it) }
+
+    manifest {
+        attributes 'Main-Class': main_name
+    }
+}
+
+mainClassName = main_name
