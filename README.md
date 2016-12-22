@@ -15,3 +15,7 @@ Then in gradle-groovy-hello dir, run:
 ```
 gradle build
 ```
+Then you could run jar as follows:
+```
+java -jar build/libs/gs-gradle-0.1.0.jar
+```
