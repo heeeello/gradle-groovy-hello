@@ -2,6 +2,7 @@
 This is a template project for gradle/groovy usage
 
 I will use docker-gradle to build this project as follows:
+
 First in ~/.bashrc, add:
 ```
 alias gradle='docker run -it -v `pwd`:/usr/bin/app  niaquinto/gradle'
